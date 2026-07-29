@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thank You — Dea Abakelia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@300;400&family=Noto+Serif+Georgian:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --black:#080808;
+  --ivory:#f0ead8;
+  --ivory-muted:#b8b09a;
+  --gold:#c9a84c;
+  --gold-dim:#7a6230;
+  --white:#faf8f3;
+}
+html,body{height:100%;background:var(--black);color:var(--ivory);font-family:'Cormorant Garamond',Georgia,serif;}
+
+/* Language detection from referrer — handled via JS */
+.ka{display:none !important;}
+body.lang-ka .en{display:none !important;}
+body.lang-ka .ka{display:block !important;}
+
+body{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:40px 24px;
+  text-align:center;
+  background:radial-gradient(ellipse at center, #0e0d0b 0%, #080808 70%);
+}
+
+.ornament{
+  font-size:48px;
+  color:var(--gold);
+  margin-bottom:32px;
+  opacity:0.85;
+  letter-spacing:0.1em;
+}
+
+.headline{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,6vw,64px);
+  color:var(--white);
+  line-height:1.15;
+  margin-bottom:16px;
+}
+.headline em{
+  font-style:italic;
+  color:var(--gold);
+}
+
+.subline{
+  font-family:'Nunito Sans',sans-serif;
+  font-size:11px;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:48px;
+}
+
+.message{
+  font-size:clamp(18px,2.5vw,22px);
+  color:var(--ivory-muted);
+  line-height:1.8;
+  max-width:540px;
+  margin:0 auto 56px;
+  font-style:italic;
+}
+.message strong{
+  color:var(--ivory);
+  font-style:normal;
+  font-weight:400;
+}
+
+.divider{
+  width:60px;
+  height:1px;
+  background:var(--gold);
+  margin:0 auto 56px;
+  opacity:0.5;
+}
+
+.btn-back{
+  display:inline-block;
+  padding:15px 44px;
+  background:var(--gold);
+  color:var(--black);
+  text-decoration:none;
+  font-family:'Nunito Sans',sans-serif;
+  font-size:11px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  transition:background 0.25s;
+  cursor:pointer;
+  border:none;
+}
+.btn-back:hover{background:#e8c97a;}
+
+.name-footer{
+  margin-top:64px;
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  color:var(--gold);
+  letter-spacing:0.08em;
+}
+.name-sub{
+  font-family:'Nunito Sans',sans-serif;
+  font-size:10px;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:var(--ivory-muted);
+  margin-top:6px;
+}
+</style>
+</head>
+<body>
+
+  <div class="ornament">✦</div>
+
+  <h1 class="headline en">Thank <em>You</em></h1>
+  <h1 class="headline ka">დიდი <em>მადლობა</em></h1>
+
+  <p class="subline en">Message received</p>
+  <p class="subline ka">შეტყობინება მიღებულია</p>
+
+  <div class="divider"></div>
+
+  <p class="message en">
+    Your message has been received and will be attended to <strong>shortly</strong>.<br/>
+    Thank you for your interest in Dea's work.
+  </p>
+  <p class="message ka">
+    თქვენი შეტყობინება მიღებულია და <strong>მალე</strong> განიხილება.<br/>
+    გმადლობთ დეას შემოქმედებით დაინტერესებისთვის.
+  </p>
+
+  <a href="/" class="btn-back en">← Back to the website</a>
+  <a href="/" class="btn-back ka">← დაბრუნება ვებსაიტზე</a>
+
+  <div class="name-footer">Dea Abakelia</div>
+  <div class="name-sub en">Classical Pianist</div>
+  <div class="name-sub ka">კლასიკური პიანისტი</div>
+
+<script>
+// Detect language from sessionStorage (set by main page) or browser language
+const stored = sessionStorage.getItem('dea-lang');
+const browserKa = navigator.language && navigator.language.startsWith('ka');
+if(stored === 'ka' || (!stored && browserKa)){
+  document.body.classList.add('lang-ka');
+}
+</script>
+</body>
+</html>
